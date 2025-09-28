@@ -1,0 +1,38 @@
+---
+# header --------------------------------------------------------------
+copyright: "Copyright &copy; The Authors"
+dev_addr: "127.0.0.1:8001"
+edit_uri: "develop/blob/docs"
+site_name: "Additional Functional Programming Concepts"
+site_url: "https://pages.github.com/PentheusLennuye/fp"
+repo_url: "https://github.com/PentheusLennuye/fp.git"
+# ---------------------------------------------------------------------
+
+markdown_extensions:
+  - "toc":
+    permalink: true
+  - "pymdownx.highlight":
+    anchor_linenums: true
+  - "pymdownx.snippets":
+    base_path: "docs/includes"
+  - "pymdownx.superfences":
+      custom_fences:
+        - name: "mermaid"
+          class: "mermaid"
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - "footnotes"
+
+nav:
+  - Overview: "index.md"
+
+plugins:
+  - "search"
+  - "mkdocs-version-annotations"
+  - "mkdocstrings":
+      default_handler: "python"
+      handlers:
+        python:
+          paths: ["."]
+          options:
+            show_root_heading: true
+

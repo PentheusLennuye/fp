@@ -1,0 +1,10 @@
+[run]
+omit =
+  features/*
+  tests/*
+
+[report]
+exclude_also =
+  def stub
+  main()
+  super()
