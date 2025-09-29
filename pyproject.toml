@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "fp", from = "src"}]
+packages = [{include = "fp"}]
 
 
 [tool.poetry.group.dev.dependencies]
