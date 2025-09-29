@@ -29,5 +29,15 @@ class Monad:
     def bind(self, f: Callable) -> Self:
         args = self.unwrap()
         f(**args)
-        return type(self).unit(args)
+        return type(self).unit(**args)
+
+    def __rshift__(self, f: Callable) -> Self:
+        """
+        >> is a Haskell-like bind operator. It makes chained code easier to
+        read.
+        """
+        args = self.unwrap()
+        f(**args)
+        return type(self).unit(**args)
+        
         

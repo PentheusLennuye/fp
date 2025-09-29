@@ -22,17 +22,23 @@ class TestInterface(TestCase):
     def test_unit(self):
         assert self.m.key == "value"
 
-    #def test_unwrap(self):
-    #    assert self.m.unwrap() == {"key": "value"}
+    def test_unwrap(self):
+        assert self.m.unwrap() == {"key": "value"}
 
-    #def test_bind_runs_a_function_and_returns_a_monad(self):
-    #    myfunction = Mock()
-    #    result = self.m.bind(myfunction)
-    #    myfunction.assert_called_once_with(key="value")
-    #    assert result.key == "value"
+    def test_bind_runs_a_function_and_returns_a_monad(self):
+        myfunction = Mock()
+        result = self.m.bind(myfunction)
+        myfunction.assert_called_once_with(key="value")
+        assert result.key == "value"
 
-        # Sometimes >> (__rshift__) is useful for chaining operations
-        #def true() -> bool:
+    def test_rshift_runs_a_function_and_returns_a_monad(self):
+        myfunction = Mock()
+        result = self.m >> myfunction
+        myfunction.assert_called_once_with(key="value")
+        assert result.key == "value"
 
     def test_identity(self):
         assert self.m.identity() == self.m
+
+    def test_abc_ABCMeta_subclasshook(self):
+        raise NotImplementedError
