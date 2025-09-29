@@ -23,7 +23,7 @@ mkdocs = "^1.6.1"
 mkdocs-material = "^9.6.20"
 mkdocstrings = "^0.30.1"
 
-[[tool.pytest.ini_options]]
+[tool.pytest.ini_options]
 addopts = [
     "--ignore=environments",
     "--ignore=.venv",
